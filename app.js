@@ -6,7 +6,6 @@ var express = require('express'),
     flash = require('connect-flash'),
     LocalStrategy = require('passport-local'),
     User = require('./models/user'),
-    seedDB = require("./seeds"),
     methodOverride = require('method-override');
 //Requiring Routes
 
@@ -14,6 +13,11 @@ var commentRoutes = require('./routes/comments'),
     campgroundRoutes = require('./routes/campgrounds'),
     indexRoutes = require('./routes/index');
 
+
+//DEV SERVER
+mongoose.connect(process.env.DATABASEURL, { useMongoClient: true });
+// DEPLOYMENT SERVER
+console.log(process.env.DATABASEURL);
 mongoose.connect("mongodb://admin:471582ee@ds121896.mlab.com:21896/nashcamp", { useMongoClient: true });
 mongoose.Promise = global.Promise;
 app.set("view engine", "ejs");
