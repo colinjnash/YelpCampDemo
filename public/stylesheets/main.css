@@ -1,0 +1,29 @@
+.thumbnail img {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.thumbnail {
+    padding: 0;
+    overflow: hidden;
+}
+
+.thumbnail .caption-full {
+    padding: 9px;
+}
+
+.deleteForm {
+    display: inline;
+}
+
+.equalize-row {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
