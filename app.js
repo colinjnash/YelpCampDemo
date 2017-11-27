@@ -14,11 +14,9 @@ var commentRoutes = require('./routes/comments'),
     indexRoutes = require('./routes/index');
 
 
+var dbUrl = process.env.DATABASEURL || "mongodb://<dbuser>:<dbpassword>@ds121896.mlab.com:21896/nashcamp";
 //DEV SERVER
-mongoose.connect(process.env.DATABASEURL, { useMongoClient: true });
-// DEPLOYMENT SERVER
-console.log(process.env.DATABASEURL);
-mongoose.connect("mongodb://admin:471582ee@ds121896.mlab.com:21896/nashcamp", { useMongoClient: true });
+mongoose.connect(dbUrl, { useMongoClient: true });
 mongoose.Promise = global.Promise;
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
