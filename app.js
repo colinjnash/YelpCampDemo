@@ -14,7 +14,7 @@ var commentRoutes = require('./routes/comments'),
     campgroundRoutes = require('./routes/campgrounds'),
     indexRoutes = require('./routes/index');
 
-mongoose.connect("mongodb://localhost/yelp_camp_v12", { useMongoClient: true });
+mongoose.connect("mongodb://admin:471582ee@ds121896.mlab.com:21896/nashcamp", { useMongoClient: true });
 mongoose.Promise = global.Promise;
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
